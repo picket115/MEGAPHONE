@@ -1,0 +1,8 @@
+<div>
+    <p>댓글 목록</p>
+    {% for reply in replies %}
+    <ul>
+        <li>{{reply.user}} : {{reply.content}}</li>
+    </ul>
+    {% endfor %}
+</div>

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>MEGAPHONE</h1>
+
+<ul>
+    {% for posting in postings %}
+    <li>
+        <a href="{% url 'website:posting_detail' posting.pk %}"><h2>{{posting.title}}</h2> . {{posting.created_at}} </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock content %}

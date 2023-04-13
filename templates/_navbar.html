@@ -1,0 +1,23 @@
+<nav>
+    <ul>
+        <li>
+            <a href="{% url 'website:posting_index' %}">HOME</a>
+        </li>
+        {% if request.user.is_authenticated %}
+        <li>
+            <a href="{% url 'website:posting_create' %}">NEW POSTING</a>
+        </li>
+        <li>
+            <a href="{% url 'accounts:signout' %}">LogOut</a>
+        </li>
+        {% else %}
+        <li>
+            <a href="{% url 'accounts:signin' %}">LogIn</a>
+        </li>
+        <li>
+            <a href="{% url 'accounts:signup' %}">Join</a>
+        </li>
+        {% endif %}
+    </ul>
+    
+</nav>

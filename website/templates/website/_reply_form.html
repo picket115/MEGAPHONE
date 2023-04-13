@@ -1,0 +1,8 @@
+<div>
+    <p>댓글작성</p>
+    <form action="{% url 'website:reply_create' posting.pk %}" method="POST">
+        {% csrf_token %}
+        {{ replyform }}
+        <button>등록</button>
+    </form>
+</div>

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1> TITLE : {{posting.title}}</h1>
+<div>
+        <P>
+            CONTENT : {{posting.content}}
+        </P>    
+        <P>
+            작성자 : {{posting.user.username}}
+        </P>
+        <p>
+            작성일 : {{posting.created_at}}
+        </p>
+</div>
+<div>
+    <a href="{% url 'website:posting_update' posting.pk %}">
+        <button>수정</button>
+    </a>
+</div>
+<div>
+    {% include 'website/_reply_form.html' %}
+    {% include 'website/_reply_list.html' %}
+</div>
+{% endblock content %}
